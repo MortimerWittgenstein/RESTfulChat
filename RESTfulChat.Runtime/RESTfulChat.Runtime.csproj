@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard1.4</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RESTfulChat.Database\RESTfulChat.Database.csproj" />
+    <ProjectReference Include="..\RESTfulChat.Model\RESTfulChat.Model.csproj" />
+  </ItemGroup>
+
+</Project>

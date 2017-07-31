@@ -1,0 +1,66 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26430.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulChat", "RESTfulChat\RESTfulChat.csproj", "{0BD8868E-F4B0-4B74-8AF9-2F41022EDDF1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C8CF983A-CBFC-4B12-BDFA-FDCA7E8665A9} = {C8CF983A-CBFC-4B12-BDFA-FDCA7E8665A9}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulChat.Tests", "RESTfulChat.Tests\RESTfulChat.Tests.csproj", "{6A38547D-5C39-469E-ACC2-83DEAAA2E514}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulChat.Database", "RESTfulChat.Database\RESTfulChat.Database.csproj", "{3750AE10-5F20-4A16-B6E2-2C2F64313265}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "RESTfulChat.DatabaseModel", "RESTfulChat.DatabaseModel\RESTfulChat.DatabaseModel.sqlproj", "{188E184F-A7E1-4E13-88B3-E5168D069E1F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RESTfulChat.Model", "RESTfulChat.Model\RESTfulChat.Model.csproj", "{FA69DDDB-B185-4D42-B7E3-CB08CD6A1A6B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RESTfulChat.Runtime", "RESTfulChat.Runtime\RESTfulChat.Runtime.csproj", "{C8CF983A-CBFC-4B12-BDFA-FDCA7E8665A9}"
+	ProjectSection(ProjectDependencies) = postProject
+		{3750AE10-5F20-4A16-B6E2-2C2F64313265} = {3750AE10-5F20-4A16-B6E2-2C2F64313265}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulChat.Core", "RESTfulChat.Core\RESTfulChat.Core.csproj", "{013FAE98-8A7D-406B-AB88-2BDBB1B6CB2B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BD8868E-F4B0-4B74-8AF9-2F41022EDDF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BD8868E-F4B0-4B74-8AF9-2F41022EDDF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BD8868E-F4B0-4B74-8AF9-2F41022EDDF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BD8868E-F4B0-4B74-8AF9-2F41022EDDF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A38547D-5C39-469E-ACC2-83DEAAA2E514}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A38547D-5C39-469E-ACC2-83DEAAA2E514}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A38547D-5C39-469E-ACC2-83DEAAA2E514}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A38547D-5C39-469E-ACC2-83DEAAA2E514}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3750AE10-5F20-4A16-B6E2-2C2F64313265}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3750AE10-5F20-4A16-B6E2-2C2F64313265}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3750AE10-5F20-4A16-B6E2-2C2F64313265}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3750AE10-5F20-4A16-B6E2-2C2F64313265}.Release|Any CPU.Build.0 = Release|Any CPU
+		{188E184F-A7E1-4E13-88B3-E5168D069E1F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{188E184F-A7E1-4E13-88B3-E5168D069E1F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{188E184F-A7E1-4E13-88B3-E5168D069E1F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{188E184F-A7E1-4E13-88B3-E5168D069E1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{188E184F-A7E1-4E13-88B3-E5168D069E1F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{188E184F-A7E1-4E13-88B3-E5168D069E1F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{FA69DDDB-B185-4D42-B7E3-CB08CD6A1A6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA69DDDB-B185-4D42-B7E3-CB08CD6A1A6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA69DDDB-B185-4D42-B7E3-CB08CD6A1A6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA69DDDB-B185-4D42-B7E3-CB08CD6A1A6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8CF983A-CBFC-4B12-BDFA-FDCA7E8665A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8CF983A-CBFC-4B12-BDFA-FDCA7E8665A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8CF983A-CBFC-4B12-BDFA-FDCA7E8665A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8CF983A-CBFC-4B12-BDFA-FDCA7E8665A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{013FAE98-8A7D-406B-AB88-2BDBB1B6CB2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{013FAE98-8A7D-406B-AB88-2BDBB1B6CB2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{013FAE98-8A7D-406B-AB88-2BDBB1B6CB2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{013FAE98-8A7D-406B-AB88-2BDBB1B6CB2B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

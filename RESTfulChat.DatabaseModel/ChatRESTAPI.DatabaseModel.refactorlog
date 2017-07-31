@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="6ddb3d9b-8986-4245-9701-0e27abf6926f" ChangeDateTime="07/27/2017 06:35:14">
+    <Property Name="ElementName" Value="[dbo].[User].[Name]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[User]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FirstName" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="d949facd-8455-47b7-9733-2a7fd5b235d5" ChangeDateTime="07/27/2017 06:37:41">
+    <Property Name="ElementName" Value="[dbo].[Chat_User].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Chat_User]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ChatId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="17637d3a-134e-4c96-bd33-ff2b584c64d9" ChangeDateTime="07/27/2017 06:45:24">
+    <Property Name="ElementName" Value="[dbo].[ChatMessage].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ChatMessage]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="ChatId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="1ff7d545-2e66-471e-a8e4-6f5f86f27388" ChangeDateTime="07/27/2017 06:51:41">
+    <Property Name="ElementName" Value="[dbo].[ChatMessage].[Message]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ChatMessage]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="FromUserId" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="72348b18-9246-4225-822c-79a214710524" ChangeDateTime="07/27/2017 07:11:07">
+    <Property Name="ElementName" Value="[dbo].[ChatMessage].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[ChatMessage]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="CreatedAt" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="e03f9cbf-a383-4ba3-a0f4-caeb7d22731a" ChangeDateTime="07/27/2017 07:40:22">
+    <Property Name="ElementName" Value="[dbo].[Chat].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Chat]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f2657d9b-56b8-48bc-aba8-8ebb2934b85e" ChangeDateTime="07/27/2017 07:40:26">
+    <Property Name="ElementName" Value="[dbo].[Chat].[Name]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Chat]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="name" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="738e7d81-5651-4456-b8c6-5a72fbc1ccff" ChangeDateTime="07/27/2017 07:40:42">
+    <Property Name="ElementName" Value="[dbo].[Chat].[id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Chat]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="37d8c64a-4376-4c0c-9a01-c8b2130afa01" ChangeDateTime="07/27/2017 07:40:45">
+    <Property Name="ElementName" Value="[dbo].[Chat].[name]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Chat]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Name" />
+  </Operation>
+</Operations>

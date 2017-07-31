@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Chat]
+(
+	[Id] INT IDENTITY NOT NULL, 
+    [Name] NVARCHAR(MAX) NULL,
+	PRIMARY KEY ([Id])
+)
