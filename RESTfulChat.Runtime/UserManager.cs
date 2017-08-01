@@ -19,5 +19,20 @@ namespace RESTfulChat.Runtime
         {
             return Users.Where(u => u.Id.Equals(id)).First();
         }
+
+        public static void AddUser(string firstName, string lastName, DateTime birthdate, string email, string company)
+        {
+            var user = new User
+            {
+                Id = Database.DatabaseManager.InsertUser(firstName,lastName,birthdate,email,company),
+                FirstName = firstName,
+                LastName = lastName,
+                Birthdate = birthdate,
+                Email = email,
+                Company = company
+            };
+
+            Users.Add(user);
+        }
     }
 }
