@@ -24,7 +24,7 @@ namespace RESTfulChat.Database
             Connection.SubmitChanges();
         }
 
-        public static void InsertChat(string name)
+        public static int InsertChat(string name)
         {
             var chat = new Chat()
             {
@@ -33,6 +33,7 @@ namespace RESTfulChat.Database
 
             Connection.Chats.InsertOnSubmit(chat);
             Connection.SubmitChanges();
+            return chat.Id;
         }
 
         public static void InsertChatUser(int chatId, int userId)
@@ -47,12 +48,12 @@ namespace RESTfulChat.Database
             Connection.SubmitChanges();
         }
 
-        public static void InsertMessage(int chatId, int fromUserId, string text)
+        public static void InsertMessage(int chatId, DateTime createdAt, int fromUserId, string text)
         {
             var message = new Message()
             {
                 ChatId = chatId,
-                CreatedAt = DateTime.Now,
+                CreatedAt = createdAt,
                 FromUserId = fromUserId,
                 Text = text                
             };

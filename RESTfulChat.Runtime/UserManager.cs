@@ -10,9 +10,14 @@ namespace RESTfulChat.Runtime
     {
         public static List<User> Users { get; set; }
 
-        public static string GetUserById(int id)
+        public static string GetJSONUserById(int id)
         {
-            return Users.Where(u => u.Id.Equals(id)).First().Serialize();
+            return GetUserById(id).Serialize();
+        }
+
+        public static User GetUserById(int id)
+        {
+            return Users.Where(u => u.Id.Equals(id)).First();
         }
     }
 }

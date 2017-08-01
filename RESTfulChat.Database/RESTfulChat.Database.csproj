@@ -73,11 +73,5 @@
       <DependentUpon>DataClassesDataContext.dbml</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\RESTfulChat.Model\RESTfulChat.Model.csproj">
-      <Project>{fa69dddb-b185-4d42-b7e3-cb08cd6a1a6b}</Project>
-      <Name>RESTfulChat.Model</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
