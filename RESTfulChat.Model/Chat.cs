@@ -9,8 +9,14 @@ namespace RESTfulChat.Model
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<User> Members { get; set; }
-        public List<Message> Messages { get; set; }
+        public UserList Members { get; private set; }
+        public MessageList Messages { get; private set; }
+
+        public Chat()
+        {
+            Members = new UserList();
+            Messages = new MessageList();
+        }
 
         public Chat Deserialize(string value)
         {

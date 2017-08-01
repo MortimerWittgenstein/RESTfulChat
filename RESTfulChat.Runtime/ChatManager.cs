@@ -7,40 +7,50 @@ namespace RESTfulChat.Runtime
 {
     public static class ChatManager
     {
-        private static List<Chat> Chats { get; set; }
+        public static ChatList Chats = new ChatList();
 
-        public static string GetJSONChatById(int id)
+        public static string GetJSONChat(int id)
         {
-            return GetChatById(id).Serialize();
+            return GetChat(id).Serialize();
         }
 
-        public static Chat GetChatById(int id)
+        public static Chat GetChat(int id)
         {
             return Chats.Where(c => c.Id.Equals(id)).First();
         }
 
-        public static int AddChat(string name)
+        public static string GetJSONChatMembers(int chatId)
         {
-            var chat = new Chat()
-            {
-                Id = Database.DatabaseManager.InsertChat(name),
-                Name = name
-            };
+            return GetChatMembers(chatId).Serialize(); 
+        }
 
+        public static UserList GetChatMembers(int chatId)
+        {
+            return GetChat(chatId).Members;
+        }
+
+        public static int AddJSONChat(string json)
+        {
+            return AddChat(new Chat().Deserialize(json));
+        }
+
+        public static int AddChat(Chat chat)
+        {
+            chat.Id = Database.DatabaseManager.InsertChat(chat.Name);
             Chats.Add(chat);
             return chat.Id;
         }
 
         public static void AddMemberToChat(int userId, int chatId)
         {
-            var user = UserManager.GetUserById(userId);
+            var user = UserManager.GetUser(userId);
             if(user == null)
             {
                 System.Console.WriteLine("User does not exist");
                 return;
-            }    
+            }
 
-            var chat = GetChatById(chatId);
+            var chat = GetChat(chatId);
             if(chat == null)
             {
                 System.Console.WriteLine("Chat does not exist");
@@ -59,20 +69,12 @@ namespace RESTfulChat.Runtime
             }
         }
 
-        public static void AddMessageToChat(int chatId, int userId, string text)
+        public static void AddMessageToChat(int chatId, string json)
         {
-            var fromUser = UserManager.GetUserById(userId);
-            var message = new Message
-            {
-                FromUser = fromUser,
-                Text = text,
-                Time = DateTime.Now
-            };
-
-            var chat = GetChatById(chatId);
-
-            chat.Messages.Add(message);
-            Database.DatabaseManager.InsertMessage(chatId, message.Time, userId, text);
+            var message = new Message().Deserialize(json);
+            message.Time = DateTime.Now;
+            GetChat(chatId).Messages.Add(message);
+            Database.DatabaseManager.InsertMessage(chatId, message.Time, message.FromUser.Id, message.Text);
         }
     }
 }

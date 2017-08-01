@@ -641,6 +641,8 @@ namespace RESTfulChat.Database
 		
 		private int _Id;
 		
+		private string _UserName;
+		
 		private string _FirstName;
 		
 		private string _LastName;
@@ -661,6 +663,8 @@ namespace RESTfulChat.Database
     partial void OnCreated();
     partial void OnIdChanging(int value);
     partial void OnIdChanged();
+    partial void OnUserNameChanging(string value);
+    partial void OnUserNameChanged();
     partial void OnFirstNameChanging(string value);
     partial void OnFirstNameChanged();
     partial void OnLastNameChanging(string value);
@@ -696,6 +700,26 @@ namespace RESTfulChat.Database
 					this._Id = value;
 					this.SendPropertyChanged("Id");
 					this.OnIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(MAX) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this.OnUserNameChanging(value);
+					this.SendPropertyChanging();
+					this._UserName = value;
+					this.SendPropertyChanged("UserName");
+					this.OnUserNameChanged();
 				}
 			}
 		}

@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace RESTfulChat.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class ValuesController : ApiController
     {
         // GET api/values
@@ -25,6 +25,7 @@ namespace RESTfulChat.Controllers
         // POST api/values
         public void Post([FromBody]string value)
         {
+            Console.WriteLine(value);
         }
 
         // PUT api/values/5

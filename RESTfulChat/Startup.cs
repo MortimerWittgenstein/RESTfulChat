@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Owin;
 using Owin;
+using RESTfulChat.Runtime;
 
 [assembly: OwinStartup(typeof(RESTfulChat.Startup))]
 
@@ -13,6 +14,9 @@ namespace RESTfulChat
         public void Configuration(IAppBuilder app)
         {
             ConfigureAuth(app);
+
+            // load data from database
+            DataManager.LoadDataFromDB();
         }
     }
 }

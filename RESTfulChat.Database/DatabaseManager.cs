@@ -2,14 +2,15 @@
 using System.Data.Linq;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace RESTfulChat.Database
 {
     public static class DatabaseManager
     {
-        public static DataClassesDataContext Connection = new DataClassesDataContext();
+        public static DataClassesDataContext Db = new DataClassesDataContext();
 
-        public static void InsertUser(string firstName, string lastName, DateTime birthdate, string email, string company)
+        public static int InsertUser(string firstName, string lastName, DateTime birthdate, string email, string company)
         {
             var user = new User()
             {
@@ -20,8 +21,9 @@ namespace RESTfulChat.Database
                 Company = company
             };
 
-            Connection.Users.InsertOnSubmit(user);
-            Connection.SubmitChanges();
+            Db.Users.InsertOnSubmit(user);
+            Db.SubmitChanges();
+            return user.Id;
         }
 
         public static int InsertChat(string name)
@@ -31,8 +33,8 @@ namespace RESTfulChat.Database
                 Name = name
             };
 
-            Connection.Chats.InsertOnSubmit(chat);
-            Connection.SubmitChanges();
+            Db.Chats.InsertOnSubmit(chat);
+            Db.SubmitChanges();
             return chat.Id;
         }
 
@@ -44,8 +46,8 @@ namespace RESTfulChat.Database
                 UserId = userId
             };
 
-            Connection.ChatUsers.InsertOnSubmit(chatUser);
-            Connection.SubmitChanges();
+            Db.ChatUsers.InsertOnSubmit(chatUser);
+            Db.SubmitChanges();
         }
 
         public static void InsertMessage(int chatId, DateTime createdAt, int fromUserId, string text)
@@ -58,8 +60,8 @@ namespace RESTfulChat.Database
                 Text = text                
             };
 
-            Connection.Messages.InsertOnSubmit(message);
-            Connection.SubmitChanges();
+            Db.Messages.InsertOnSubmit(message);
+            Db.SubmitChanges();
         }
 
     }

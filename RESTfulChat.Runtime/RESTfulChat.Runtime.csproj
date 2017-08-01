@@ -32,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,10 +42,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChatManager.cs" />
+    <Compile Include="DataManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\RESTfulChat.Core\RESTfulChat.Core.csproj">
+      <Project>{3D8FEA54-354A-4147-AD1E-6E2354FD4F19}</Project>
+      <Name>RESTfulChat.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\RESTfulChat.Database\RESTfulChat.Database.csproj">
       <Project>{3750ae10-5f20-4a16-b6e2-2c2f64313265}</Project>
       <Name>RESTfulChat.Database</Name>
