@@ -37,7 +37,7 @@ namespace RESTfulChat.Runtime
 
         public static int AddUser(User user)
         {
-            user.Id = Database.DatabaseManager.InsertUser(user.FirstName, user.LastName, user.Birthdate, user.Email, user.Company);
+            user.Id = Database.DatabaseManager.InsertUser(user.UserName, user.FirstName, user.LastName, user.Birthdate, user.Email, user.Company);
             Users.Add(user);
             return user.Id;
         }
