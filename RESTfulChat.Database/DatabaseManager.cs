@@ -10,10 +10,11 @@ namespace RESTfulChat.Database
     {
         public static DataClassesDataContext Db = new DataClassesDataContext();
 
-        public static int InsertUser(string firstName, string lastName, DateTime birthdate, string email, string company)
+        public static int InsertUser(string userName, string firstName, string lastName, DateTime birthdate, string email, string company)
         {
             var user = new User()
             {
+                UserName = userName,
                 FirstName = firstName,
                 LastName = lastName,
                 Birthdate = birthdate,
