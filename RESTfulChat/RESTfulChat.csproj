@@ -325,10 +325,6 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RESTfulChat.Model\RESTfulChat.Model.csproj">
-      <Project>{D8E84AF7-520F-4553-B4CB-A3B4763D1E52}</Project>
-      <Name>RESTfulChat.Model</Name>
-    </ProjectReference>
     <ProjectReference Include="..\RESTfulChat.Runtime\RESTfulChat.Runtime.csproj">
       <Project>{aadebc9e-ab45-4cbc-a176-c6a5f84b1c09}</Project>
       <Name>RESTfulChat.Runtime</Name>

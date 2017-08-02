@@ -5,17 +5,15 @@ VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulChat", "RESTfulChat\RESTfulChat.csproj", "{0BD8868E-F4B0-4B74-8AF9-2F41022EDDF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulChat.Tests", "RESTfulChat.Tests\RESTfulChat.Tests.csproj", "{6A38547D-5C39-469E-ACC2-83DEAAA2E514}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulChat.Database", "RESTfulChat.Database\RESTfulChat.Database.csproj", "{3750AE10-5F20-4A16-B6E2-2C2F64313265}"
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "RESTfulChat.DatabaseModel", "RESTfulChat.DatabaseModel\RESTfulChat.DatabaseModel.sqlproj", "{188E184F-A7E1-4E13-88B3-E5168D069E1F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulChat.Runtime", "RESTfulChat.Runtime\RESTfulChat.Runtime.csproj", "{AADEBC9E-AB45-4CBC-A176-C6A5F84B1C09}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulChat.Model", "RESTfulChat.Model\RESTfulChat.Model.csproj", "{D8E84AF7-520F-4553-B4CB-A3B4763D1E52}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulChat.Core", "RESTfulChat.Core\RESTfulChat.Core.csproj", "{3D8FEA54-354A-4147-AD1E-6E2354FD4F19}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulChat.Runtime", "RESTfulChat.Runtime\RESTfulChat.Runtime.csproj", "{AADEBC9E-AB45-4CBC-A176-C6A5F84B1C09}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,10 +25,6 @@ Global
 		{0BD8868E-F4B0-4B74-8AF9-2F41022EDDF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BD8868E-F4B0-4B74-8AF9-2F41022EDDF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BD8868E-F4B0-4B74-8AF9-2F41022EDDF1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6A38547D-5C39-469E-ACC2-83DEAAA2E514}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6A38547D-5C39-469E-ACC2-83DEAAA2E514}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6A38547D-5C39-469E-ACC2-83DEAAA2E514}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6A38547D-5C39-469E-ACC2-83DEAAA2E514}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3750AE10-5F20-4A16-B6E2-2C2F64313265}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{3750AE10-5F20-4A16-B6E2-2C2F64313265}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3750AE10-5F20-4A16-B6E2-2C2F64313265}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,6 +35,10 @@ Global
 		{188E184F-A7E1-4E13-88B3-E5168D069E1F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{188E184F-A7E1-4E13-88B3-E5168D069E1F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{188E184F-A7E1-4E13-88B3-E5168D069E1F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{AADEBC9E-AB45-4CBC-A176-C6A5F84B1C09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AADEBC9E-AB45-4CBC-A176-C6A5F84B1C09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AADEBC9E-AB45-4CBC-A176-C6A5F84B1C09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AADEBC9E-AB45-4CBC-A176-C6A5F84B1C09}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D8E84AF7-520F-4553-B4CB-A3B4763D1E52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D8E84AF7-520F-4553-B4CB-A3B4763D1E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8E84AF7-520F-4553-B4CB-A3B4763D1E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -49,10 +47,6 @@ Global
 		{3D8FEA54-354A-4147-AD1E-6E2354FD4F19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D8FEA54-354A-4147-AD1E-6E2354FD4F19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D8FEA54-354A-4147-AD1E-6E2354FD4F19}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AADEBC9E-AB45-4CBC-A176-C6A5F84B1C09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AADEBC9E-AB45-4CBC-A176-C6A5F84B1C09}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AADEBC9E-AB45-4CBC-A176-C6A5F84B1C09}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AADEBC9E-AB45-4CBC-A176-C6A5F84B1C09}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
