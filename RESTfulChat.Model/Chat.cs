@@ -9,12 +9,12 @@ namespace RESTfulChat.Model
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public UserList Members { get; private set; }
+        public UserDictionary Members { get; private set; }
         public MessageList Messages { get; private set; }
 
         public Chat()
         {
-            Members = new UserList();
+            Members = new UserDictionary();
             Messages = new MessageList();
         }
 
@@ -25,7 +25,7 @@ namespace RESTfulChat.Model
 
         public string Serialize()
         {
-            return JsonConvert.SerializeObject(this);
+            return JsonConvert.SerializeObject(this, Formatting.Indented);
         }
     }
 }

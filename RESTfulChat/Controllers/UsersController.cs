@@ -14,22 +14,20 @@ namespace RESTfulChat.Controllers
     {
         // GET api/users
         [HttpGet]
-        public UserList Get()
+        public UserDictionary Get()
         {
             return UserManager.GetUserList();
         }
 
         // GET api/users/5
         [HttpGet]
-        public User Get(int id)
-        {
-            return UserManager.GetUser(id);
-        }
+        public User Get(int id) => UserManager.GetUser(id);
 
         [HttpPost]
-        public void Post([FromBody]User value)
-        {
-            UserManager.AddUser(value);
-        }
+        public void Post([FromBody]User value) => UserManager.AddUser(value);
+
+        // DELETE api/users/5
+        [HttpDelete]
+        public void Delete(int id) => UserManager.RemoveUser(id);
     }
 }

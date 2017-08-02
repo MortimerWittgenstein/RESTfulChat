@@ -3,12 +3,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace RESTfulChat.Runtime
 {
     public static class UserManager
     {
-        public static UserList Users = new UserList();
+        public static UserDictionary Users = new UserDictionary();
 
         public static string GetJSONUser(int id)
         {
@@ -17,15 +19,17 @@ namespace RESTfulChat.Runtime
 
         public static User GetUser(int id)
         {
-            return Users.Where(u => u.Id.Equals(id)).First();
+            Thread.Sleep(5000);
+            Users.TryGetValue(id, out User user);
+            return user;
         }
-
+        
         public static string GetJSONUserList()
         {
             return Users.Serialize();
         }
 
-        public static UserList GetUserList()
+        public static UserDictionary GetUserList()
         {
             return Users;
         }
@@ -38,8 +42,13 @@ namespace RESTfulChat.Runtime
         public static int AddUser(User user)
         {
             user.Id = Database.DatabaseManager.InsertUser(user.UserName, user.FirstName, user.LastName, user.Birthdate, user.Email, user.Company);
-            Users.Add(user);
+            Users.TryAdd(user.Id, user);
             return user.Id;
+        }
+
+        public static void RemoveUser(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

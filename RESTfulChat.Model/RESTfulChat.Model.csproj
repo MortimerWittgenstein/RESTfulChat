@@ -45,12 +45,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Chat.cs" />
-    <Compile Include="ChatList.cs" />
+    <Compile Include="ChatDictionary.cs" />
     <Compile Include="Message.cs" />
     <Compile Include="MessageList.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs" />
-    <Compile Include="UserList.cs" />
+    <Compile Include="UserDictionary.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RESTfulChat.Core\RESTfulChat.Core.csproj">

@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using RESTfulChat.Core;
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace RESTfulChat.Model
 {
-    public class MessageList : List<Message>, ISerializable<MessageList>
+    public class ChatDictionary : ConcurrentDictionary<int, Chat>, ISerializable<ChatDictionary>
     {
-        public MessageList Deserialize(string value)
+        public ChatDictionary Deserialize(string value)
         {
-            return JsonConvert.DeserializeObject<MessageList>(value);
+            return JsonConvert.DeserializeObject<ChatDictionary>(value);
         }
 
         public string Serialize()

@@ -27,6 +27,15 @@ namespace RESTfulChat.Database
             return user.Id;
         }
 
+        public static void DeleteUser(int userId)
+        {
+            var user = (from u in Db.Users
+                       where u.Id == userId
+                       select u).ToList().First();
+            Db.Users.DeleteOnSubmit(user);
+            Db.SubmitChanges();
+        }
+
         public static int InsertChat(string name)
         {
             var chat = new Chat()
@@ -64,6 +73,8 @@ namespace RESTfulChat.Database
             Db.Messages.InsertOnSubmit(message);
             Db.SubmitChanges();
         }
+
+
 
     }
 }

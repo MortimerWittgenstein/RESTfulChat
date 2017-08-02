@@ -7,7 +7,7 @@ namespace RESTfulChat.Runtime
 {
     public static class ChatManager
     {
-        public static ChatList Chats = new ChatList();
+        public static ChatDictionary Chats = new ChatDictionary();
 
         public static string GetJSONChat(int id)
         {
@@ -16,7 +16,9 @@ namespace RESTfulChat.Runtime
 
         public static Chat GetChat(int id)
         {
-            return Chats.Where(c => c.Id.Equals(id)).First();
+            Chats.TryGetValue(id, out Chat chat);
+
+            return chat;
         }
 
         public static string GetJSONChatMembers(int chatId)
@@ -24,7 +26,7 @@ namespace RESTfulChat.Runtime
             return GetChatMembers(chatId).Serialize(); 
         }
 
-        public static UserList GetChatMembers(int chatId)
+        public static UserDictionary GetChatMembers(int chatId)
         {
             return GetChat(chatId).Members;
         }
@@ -37,7 +39,7 @@ namespace RESTfulChat.Runtime
         public static int AddChat(Chat chat)
         {
             chat.Id = Database.DatabaseManager.InsertChat(chat.Name);
-            Chats.Add(chat);
+            Chats.TryAdd(chat.Id, chat);
             return chat.Id;
         }
 
@@ -57,9 +59,9 @@ namespace RESTfulChat.Runtime
                 return;
             }
 
-            if (chat.Members.Where(m => m.Id.Equals(userId)).First() == null)
+            if (!chat.Members.ContainsKey(user.Id))
             {
-                chat.Members.Add(user);
+                chat.Members.TryAdd(user.Id, user);
                 Database.DatabaseManager.InsertChatUser(chatId, userId);
             }
             else
