@@ -9,21 +9,27 @@ namespace RESTfulChat.Runtime
     {
         public static ChatDictionary Chats = new ChatDictionary();
 
-        public static string GetJSONChat(int id)
-        {
-            return GetChat(id).Serialize();
-        }
-
         public static Chat GetChat(int id)
         {
             Chats.TryGetValue(id, out Chat chat);
-
             return chat;
         }
 
-        public static string GetJSONChatMembers(int chatId)
+        public static ChatDictionary GetChatList()
         {
-            return GetChatMembers(chatId).Serialize(); 
+            return Chats;
+        }
+
+        public static void ModifyChat(int id, Chat newChat)
+        {
+            var chat = GetChat(id);
+            ModelManager.Update(chat, newChat);
+            Database.DatabaseManager.ModifyChat(id, chat.Name, chat.Members, chat.Messages);
+        }
+
+        public static void DeleteChat(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public static UserDictionary GetChatMembers(int chatId)
@@ -31,9 +37,10 @@ namespace RESTfulChat.Runtime
             return GetChat(chatId).Members;
         }
 
-        public static int AddJSONChat(string json)
+        public static User GetChatMember(int chatId, int userId)
         {
-            return AddChat(new Chat().Deserialize(json));
+            GetChat(chatId).Members.TryGetValue(userId, out User member);
+            return member;
         }
 
         public static int AddChat(Chat chat)
@@ -48,15 +55,13 @@ namespace RESTfulChat.Runtime
             var user = UserManager.GetUser(userId);
             if(user == null)
             {
-                System.Console.WriteLine("User does not exist");
-                return;
+                throw new Exception("User does not exist");
             }
 
             var chat = GetChat(chatId);
             if(chat == null)
             {
-                System.Console.WriteLine("Chat does not exist");
-                return;
+                throw new Exception("Chat does not exist");
             }
 
             if (!chat.Members.ContainsKey(user.Id))
@@ -66,17 +71,39 @@ namespace RESTfulChat.Runtime
             }
             else
             {
-                System.Console.WriteLine("User is already Member of this chat");
-                return;
+                throw new Exception("User is already member of this chat");
             }
         }
 
-        public static void AddMessageToChat(int chatId, string json)
+        public static MessageList GetMessages(int chatId)
         {
-            var message = new Message().Deserialize(json);
+            return GetChat(chatId).Messages;
+        }
+
+        public static Message AddMessageToChat(int chatId, Message message)
+        {
             message.Time = DateTime.Now;
+            try
+            {
+                if (message.FromUser.Id != 0 && message.FromUser.UserName == null)
+                    throw new Exception("Id or UserName required");
+
+                if (message.FromUser.Id != 0)
+                    message.FromUser = UserManager.GetUser(message.FromUser.Id);
+                else
+                    message.FromUser = UserManager.GetUserByUserName(message.FromUser.UserName);
+            }
+            catch
+            {
+                throw new Exception("Message must have a FromUser attribute");
+            }
+
+            if(GetChatMember(chatId,message.FromUser.Id) == null)
+                throw new Exception("User is not part of ");
+
             GetChat(chatId).Messages.Add(message);
             Database.DatabaseManager.InsertMessage(chatId, message.Time, message.FromUser.Id, message.Text);
+            return message;
         }
     }
 }

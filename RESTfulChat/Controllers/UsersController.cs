@@ -12,22 +12,19 @@ namespace RESTfulChat.Controllers
     //[Authorize]
     public class UsersController : ApiController
     {
-        // GET api/users
-        [HttpGet]
-        public UserDictionary Get()
-        {
-            return UserManager.GetUserList();
-        }
+        [HttpGet, Route("api/users")]
+        public UserDictionary Get() => UserManager.GetUserList();
 
-        // GET api/users/5
-        [HttpGet]
-        public User Get(int id) => UserManager.GetUser(id);
-
-        [HttpPost]
+        [HttpPost, Route("api/users")]
         public void Post([FromBody]User value) => UserManager.AddUser(value);
 
-        // DELETE api/users/5
-        [HttpDelete]
+        [HttpGet, Route("api/users/{id}")]
+        public User Get(int id) => UserManager.GetUser(id);
+
+        [HttpPut, Route("api/users/{id}")]
+        public void Put(int id, [FromBody]User value) => UserManager.ModifyUser(id, value);
+
+        [HttpDelete, Route("api/users/{id}")]
         public void Delete(int id) => UserManager.RemoveUser(id);
     }
 }

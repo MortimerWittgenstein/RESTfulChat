@@ -11,8 +11,8 @@ namespace RESTfulChat.Runtime
     {
         public static void LoadDataFromDB()
         {
-            ChatManager.Chats = GetChatList();
             UserManager.Users = GetUserList();
+            ChatManager.Chats = GetChatList();
         }
 
         private static Model.UserDictionary GetUserList()
@@ -20,16 +20,17 @@ namespace RESTfulChat.Runtime
             var users = new Model.UserDictionary();
             var dbUsers = (from u in DatabaseManager.Db.Users select u).ToList();
 
-            foreach (var u in dbUsers)
+            foreach (var dbUser in dbUsers)
             {
-                users.TryAdd(u.Id, new Model.User()
+                users.TryAdd(dbUser.Id, new Model.User()
                 {
-                    Id = u.Id,
-                    FirstName = u.FirstName,
-                    LastName = u.LastName,
-                    Birthdate = (DateTime)u.Birthdate,
-                    Email = u.Email,
-                    Company = u.Company
+                    Id = dbUser.Id,
+                    UserName = dbUser.UserName,
+                    FirstName = dbUser.FirstName,
+                    LastName = dbUser.LastName,
+                    Birthdate = (DateTime)dbUser.Birthdate,
+                    Email = dbUser.Email,
+                    Company = dbUser.Company
                 });
             }
 
@@ -60,6 +61,7 @@ namespace RESTfulChat.Runtime
                     chat.Members.TryAdd(dbMember.Id, new Model.User()
                     {
                         Id = dbMember.Id,
+                        UserName = dbMember.UserName,
                         FirstName = dbMember.FirstName,
                         LastName = dbMember.LastName,
                         Birthdate = (DateTime)dbMember.Birthdate,

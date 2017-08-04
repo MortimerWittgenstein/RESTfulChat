@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulChat.Model", "RESTfu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RESTfulChat.Core", "RESTfulChat.Core\RESTfulChat.Core.csproj", "{3D8FEA54-354A-4147-AD1E-6E2354FD4F19}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RuntimeTest", "RuntimeTest\RuntimeTest.csproj", "{F50E9CE7-C6B9-47E6-8305-0946CEDDBFE7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{3D8FEA54-354A-4147-AD1E-6E2354FD4F19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3D8FEA54-354A-4147-AD1E-6E2354FD4F19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3D8FEA54-354A-4147-AD1E-6E2354FD4F19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F50E9CE7-C6B9-47E6-8305-0946CEDDBFE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F50E9CE7-C6B9-47E6-8305-0946CEDDBFE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F50E9CE7-C6B9-47E6-8305-0946CEDDBFE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F50E9CE7-C6B9-47E6-8305-0946CEDDBFE7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
